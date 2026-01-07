@@ -417,7 +417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4906636065763580236, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.86
+      value: -11.47
       objectReference: {fileID: 0}
     - target: {fileID: 4906636065763580236, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -474,6 +474,10 @@ PrefabInstance:
     - target: {fileID: 7044046910928955914, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: mshowDebug
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044046910928955914, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
+      propertyPath: mturnRadius
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7044046910928955914, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: mtorquePower

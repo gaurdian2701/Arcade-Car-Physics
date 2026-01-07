@@ -13,6 +13,8 @@ namespace Car
         public bool mshowWheelDebug = false;
         public bool misGrounded = false;
 
+        private bool misThrottled = false;
+
         #region Suspension properties
         
         [Header("Spring Properties")]
@@ -50,7 +52,6 @@ namespace Car
 
         #region Debug
         private Vector3 mdebugWheelProbePoint = Vector3.zero;
-        private Vector3 mdebugLocalSlidingVelocity = Vector3.zero;
         private Vector3 mdebugCounterSlideForce = Vector3.zero;
         #endregion
         
@@ -70,7 +71,7 @@ namespace Car
             CalculateWheelRestingPosition();
             CalculateRestorationForce();
             ApplySpringForces();
-            ApplySidewaysFriction();
+            ApplySlidingFriction();
         }
 
         private void CalculateWheelRestingPosition()
@@ -121,33 +122,42 @@ namespace Car
             mparentRigidbody.AddForceAtPosition(mspringRestorationForce, mspring.transform.position);
         }
 
-        private void ApplySidewaysFriction()
+        private void ApplySlidingFriction()
         {
             if (misGrounded)
             {
                 float slideVelocity = Vector3.Dot(mwheelVelocity, transform.right);
-                
                 float maxFriction = mgrip * mspringRestorationForce.magnitude;
-                float desiredAcceleration = slideVelocity / Time.fixedDeltaTime;
-                float desiredFrictionForce = -mparentMass * desiredAcceleration; //F = m * a;
                 
-                desiredFrictionForce = Mathf.Clamp(desiredFrictionForce, -maxFriction, maxFriction); 
+                //F = m * a, but we can get very small acceleration values which can result in a small default sideways slipping
+                //Therefore, we can just directly offset the velocity instead
                 
-                mdebugCounterSlideForce = desiredFrictionForce * transform.right;
-                mdebugLocalSlidingVelocity = slideVelocity * transform.right;
-                mparentRigidbody.AddForceAtPosition(desiredFrictionForce * transform.right, transform.position);
+                float desiredSidewaysFriction = -mparentMass * slideVelocity; 
+                
+                desiredSidewaysFriction = Mathf.Clamp(desiredSidewaysFriction, -maxFriction, maxFriction); 
+                
+                mdebugCounterSlideForce = desiredSidewaysFriction * transform.right;
+                mparentRigidbody.AddForceAtPosition(desiredSidewaysFriction * transform.right, transform.position);
             }
             else
             {
                 mdebugCounterSlideForce = Vector3.zero;
             }
         }
-
         public void ApplyThrottleForce(float someThrottleForce)
         {
             if (misGrounded)
             {
                 mparentRigidbody.AddForceAtPosition(someThrottleForce * transform.forward, transform.position);
+
+                if (someThrottleForce > 0.001f || someThrottleForce < -0.001f)
+                {
+                    misThrottled = true;
+                }
+                else
+                {
+                    misThrottled = false;
+                }
             }
         }
         void OnDrawGizmos()
@@ -165,9 +175,6 @@ namespace Car
                 
                 Gizmos.color = Color.darkGreen;
                 Gizmos.DrawLine(transform.position, transform.position + mdebugCounterSlideForce);
-                
-                Gizmos.color = Color.darkViolet;
-                Gizmos.DrawLine(transform.position, transform.position + mdebugLocalSlidingVelocity);
             }
             
             if (mshowSpringDebug)
