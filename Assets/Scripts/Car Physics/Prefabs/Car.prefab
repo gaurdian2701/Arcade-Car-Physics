@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4906636065763580236}
   - component: {fileID: 429141612883122382}
   - component: {fileID: 7044046910928955914}
-  - component: {fileID: 9130176031888671345}
   - component: {fileID: 7877789484341343067}
+  - component: {fileID: 7190821506759501900}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -36,8 +36,8 @@ Transform:
   - {fileID: 4757642567305701998}
   - {fileID: 1316671863868548098}
   - {fileID: 6797227134614918028}
-  - {fileID: 1273560220663883855}
   - {fileID: 579100333652733166}
+  - {fileID: 1273560220663883855}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &429141612883122382
@@ -141,34 +141,16 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  mtorquePower: 3
+  mbrakingPower: 6
+  mhorsePower: 550
   mwheelBaseLength: 2.72
-  mturnRadius: 11.5
+  mturnRadius: 5
   mrearTrackLength: 1.6
-  mfrontLeftWheel: {fileID: 5816892638923163788}
-  mfrontRightWheel: {fileID: 2065068707920822018}
-  mrearLeftWheel: {fileID: 5401332951916281952}
-  mrearRightWheel: {fileID: 6003469111123133633}
---- !u!65 &9130176031888671345
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4079921147483252166}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.85, y: 1.1851411, z: 4.4961085}
-  m_Center: {x: 0, y: 0.8056257, z: 0.06763768}
+  mfrontLeftWheelObject: {fileID: 0}
+  mfrontRightWheelObject: {fileID: 0}
+  mrearLeftWheelObject: {fileID: 0}
+  mrearRightWheelObject: {fileID: 0}
 --- !u!114 &7877789484341343067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,6 +269,28 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!64 &7190821506759501900
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4079921147483252166}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2959467708922500008, guid: 9ec6a8fc6925acb4abc5500eeecb8270, type: 3}
 --- !u!1 &6928545961730026598
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,8 +399,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 429141612883122382}
     - target: {fileID: 53809369977973735, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
+      propertyPath: mshowSpringDebug
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 53809369977973735, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
       propertyPath: mspringRestLength
-      value: 1
+      value: 1.24
       objectReference: {fileID: 0}
     - target: {fileID: 53809369977973735, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
       propertyPath: mspringTravelLength
@@ -405,6 +413,10 @@ PrefabInstance:
     - target: {fileID: 53809369977973735, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
       propertyPath: mspringDampingConstant
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 53809369977973735, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
+      propertyPath: mrollingFrictionConstant
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3400125593500125726, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
       propertyPath: m_LocalPosition.y
@@ -475,17 +487,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
---- !u!114 &2065068707920822018 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 53809369977973735, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
-  m_PrefabInstance: {fileID: 2024282658409469157}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eedb611ff85cd874396a3033ff9be0ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Car.CarWheel
 --- !u!4 &6797227134614918028 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4774704330838411113, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
@@ -512,8 +513,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 429141612883122382}
     - target: {fileID: 53809369977973735, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
+      propertyPath: mshowSpringDebug
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 53809369977973735, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
       propertyPath: mspringRestLength
-      value: 1
+      value: 1.24
       objectReference: {fileID: 0}
     - target: {fileID: 53809369977973735, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
       propertyPath: mspringTravelLength
@@ -522,6 +527,10 @@ PrefabInstance:
     - target: {fileID: 53809369977973735, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
       propertyPath: mspringDampingConstant
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 53809369977973735, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
+      propertyPath: mrollingFrictionConstant
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3400125593500125726, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
       propertyPath: m_LocalPosition.y
@@ -597,17 +606,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4774704330838411113, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
   m_PrefabInstance: {fileID: 5353171259621043079}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5401332951916281952 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 53809369977973735, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
-  m_PrefabInstance: {fileID: 5353171259621043079}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eedb611ff85cd874396a3033ff9be0ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Car.CarWheel
 --- !u!1001 &5766554066914534251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -629,8 +627,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 429141612883122382}
     - target: {fileID: 53809369977973735, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
+      propertyPath: mshowSpringDebug
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 53809369977973735, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
       propertyPath: mspringRestLength
-      value: 1
+      value: 1.24
       objectReference: {fileID: 0}
     - target: {fileID: 53809369977973735, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
       propertyPath: mspringTravelLength
@@ -639,6 +641,10 @@ PrefabInstance:
     - target: {fileID: 53809369977973735, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
       propertyPath: mspringDampingConstant
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 53809369977973735, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
+      propertyPath: mrollingFrictionConstant
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3400125593500125726, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
       propertyPath: m_LocalPosition.y
@@ -714,17 +720,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4774704330838411113, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
   m_PrefabInstance: {fileID: 5766554066914534251}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5816892638923163788 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 53809369977973735, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
-  m_PrefabInstance: {fileID: 5766554066914534251}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eedb611ff85cd874396a3033ff9be0ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Car.CarWheel
 --- !u!1001 &6048246404992315174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -742,8 +737,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 429141612883122382}
     - target: {fileID: 53809369977973735, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
+      propertyPath: mshowSpringDebug
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 53809369977973735, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
       propertyPath: mspringRestLength
-      value: 1
+      value: 1.24
       objectReference: {fileID: 0}
     - target: {fileID: 53809369977973735, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
       propertyPath: mspringTravelLength
@@ -752,6 +751,10 @@ PrefabInstance:
     - target: {fileID: 53809369977973735, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
       propertyPath: mspringDampingConstant
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 53809369977973735, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
+      propertyPath: mrollingFrictionConstant
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3400125593500125726, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
       propertyPath: m_LocalPosition.y
@@ -827,14 +830,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4774704330838411113, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
   m_PrefabInstance: {fileID: 6048246404992315174}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6003469111123133633 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 53809369977973735, guid: 18eeec9d99821dd46877b550ca8d8b70, type: 3}
-  m_PrefabInstance: {fileID: 6048246404992315174}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eedb611ff85cd874396a3033ff9be0ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Car.CarWheel

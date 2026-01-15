@@ -6,13 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="722b81a3-5b5f-44d6-bbd7-64db6a832b0c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Car Controller Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Car Controller Unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ARCADE - FREE Racing Car/Materials/AFRC_Env_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ARCADE - FREE Racing Car/Materials/AFRC_Env_Mat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ARCADE - FREE Racing Car/Materials/Color Variations/AFRC_Mat_Col2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ARCADE - FREE Racing Car/Materials/Color Variations/AFRC_Mat_Col2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ARCADE - FREE Racing Car/Materials/Color Variations/AFRC_Mat_Col5.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ARCADE - FREE Racing Car/Materials/Color Variations/AFRC_Mat_Col5.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Car Physics/Tire Physics.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Car Physics/Tire Physics/CarWheel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Car Physics/Tire Physics/CarWheel.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Car Controllers/CarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Car Controllers/CarController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Car Physics/Prefabs/Car.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Car Physics/Prefabs/Car.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Car Physics/Wheel Physics/CarWheel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Car Physics/Wheel Physics/CarWheel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +29,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5d0a948b6b3e4cc3ab9f63e8521a95022b200/b4/365b6489/Physics.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/CarController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@552acc76aabe/InputSystem/Plugins/PlayerInput/PlayerInput.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -126,6 +127,8 @@
       <workItem from="1765982923939" duration="2104000" />
       <workItem from="1767780130077" duration="1907000" />
       <workItem from="1767795031211" duration="2111000" />
+      <workItem from="1768297752825" duration="16560000" />
+      <workItem from="1768469648389" duration="14189000" />
     </task>
     <servers />
   </component>
