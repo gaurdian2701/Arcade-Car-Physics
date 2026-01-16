@@ -119,16 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &110318615 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7174138741284747077, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
-  m_PrefabInstance: {fileID: 649065564}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &263043020 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3878254121946777639, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
-  m_PrefabInstance: {fileID: 649065564}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,11 +272,6 @@ MonoBehaviour:
   followTarget: {fileID: 748333033}
   zOffset: 4.56
   yOffset: 1.88
---- !u!1 &352758646 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3431445126920634571, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
-  m_PrefabInstance: {fileID: 649065564}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,11 +399,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!1 &625463081 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3204218200158260358, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
-  m_PrefabInstance: {fileID: 649065564}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &649065564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -427,10 +407,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2065068707920822018, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
-      propertyPath: mspringRestLength
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4079921147483252166, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
       propertyPath: m_Name
       value: Car
@@ -475,42 +451,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5401332951916281952, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
-      propertyPath: mspringRestLength
-      value: 1.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 5816892638923163788, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
-      propertyPath: mspringRestLength
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6003469111123133633, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
-      propertyPath: mspringRestLength
-      value: 1.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 7044046910928955914, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
-      propertyPath: mtorquePower
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7044046910928955914, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
-      propertyPath: mairDragConstant
-      value: 0.0033333334
-      objectReference: {fileID: 0}
-    - target: {fileID: 7044046910928955914, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
-      propertyPath: mrearLeftWheelObject
-      value: 
-      objectReference: {fileID: 263043020}
-    - target: {fileID: 7044046910928955914, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
-      propertyPath: mfrontLeftWheelObject
-      value: 
-      objectReference: {fileID: 352758646}
-    - target: {fileID: 7044046910928955914, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
-      propertyPath: mrearRightWheelObject
-      value: 
-      objectReference: {fileID: 625463081}
-    - target: {fileID: 7044046910928955914, guid: 7cde4f7b854187c40acde1863820ef3d, type: 3}
-      propertyPath: mfrontRightWheelObject
-      value: 
-      objectReference: {fileID: 110318615}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

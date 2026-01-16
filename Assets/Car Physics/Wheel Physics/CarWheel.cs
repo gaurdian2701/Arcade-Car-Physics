@@ -19,8 +19,6 @@ namespace Car
         public bool mshowWheelDebug = false;
         public bool misGrounded = false;
 
-        public float mpowerOutput = 550.0f;
-
         #region Suspension properties
 
         [Header("Spring Properties")] [SerializeField]
@@ -39,7 +37,7 @@ namespace Car
         #region Wheel properties
 
         [Header("Wheel Properties")] public bool misLeftWheel = false;
-        [SerializeField] [Range(0.0f, 1.0f)] private float mgrip = 1.0f;
+        [SerializeField] [Range(0.0f, 2.0f)] private float mgrip = 1.0f;
         [SerializeField] [Range(0.0f, 0.1f)] private float mrollingFrictionConstant = 0.02f;
 
         #endregion
