@@ -272,6 +272,8 @@ MonoBehaviour:
   followTarget: {fileID: 748333033}
   zOffset: 4.56
   yOffset: 1.88
+  mfollowResponsiveness: 8
+  mlookAtResponsiveness: 5
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0

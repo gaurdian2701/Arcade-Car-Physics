@@ -12,8 +12,8 @@ public class CameraFollow : MonoBehaviour
 
     protected void LateUpdate()
     {
-        //Rotation ratio depends on difference between camera forward and target forward. Higher the difference, higher the ratio.
         transform.rotation = Quaternion.Slerp(transform.rotation, followTarget.transform.rotation, mlookAtResponsiveness * Time.deltaTime);
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0.0f);
         
         //Update follow position for camera
         Vector3 followPosition = followTarget.transform.position - followTarget.transform.forward * zOffset;
